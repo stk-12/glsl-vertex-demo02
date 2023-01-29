@@ -91,7 +91,7 @@ class Main {
 
   _addMesh() {
     //ジオメトリ
-    this.geometry = new THREE.IcosahedronGeometry(200, 12);
+    this.geometry = new THREE.IcosahedronGeometry(200, 24);
     // this.geometry = new THREE.PlaneGeometry(200, 200, 64, 64);
 
     //マテリアル

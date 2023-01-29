@@ -9,7 +9,7 @@ void main() {
 
   // vec3 color = mix(RED, BLUE, 0.5);
   // gl_FragColor = vec4(color, 1.0);
-  uv.x = sin(uTime * 0.5);
+  // uv.x = sin(uTime * 0.5);
   // uv.y = cos(uTime);
 
   gl_FragColor = vec4(vec3(uv, 1.0), 1.0);
