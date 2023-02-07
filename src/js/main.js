@@ -34,7 +34,7 @@ class Main {
       },
       //振幅
       uWave: {
-        value: 5.0
+        value: 20.0
       },
       //周波数
       uFrequency: {
@@ -78,9 +78,9 @@ class Main {
 
   _setGui() {
     this.gui.add(this.uniforms.uWave, "value").min(0).max(50).step(0.1).name('Wave');
-    this.gui.add(this.uniforms.uFrequency.value, "x").min(0).max(30).step(0.1).name('FrequencyX');
-    this.gui.add(this.uniforms.uFrequency.value, "y").min(0).max(30).step(0.1).name('FrequencyY');
-    this.gui.add(this.uniforms.uFrequency.value, "z").min(0).max(30).step(0.1).name('FrequencyZ');
+    // this.gui.add(this.uniforms.uFrequency.value, "x").min(0).max(30).step(0.1).name('FrequencyX');
+    // this.gui.add(this.uniforms.uFrequency.value, "y").min(0).max(30).step(0.1).name('FrequencyY');
+    // this.gui.add(this.uniforms.uFrequency.value, "z").min(0).max(30).step(0.1).name('FrequencyZ');
   }
 
   _setLight() {

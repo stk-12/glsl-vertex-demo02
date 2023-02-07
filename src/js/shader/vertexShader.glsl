@@ -97,7 +97,9 @@ void main() {
   // modelPosition.y += sin(modelPosition.x * uFrequency.x + uTime * 0.1) * uWave
   //                 *  sin(modelPosition.z * uFrequency.y + uTime * 0.1) * uWave;
 
-  float b = uWave * cnoise(pos);
+  // noise = 10.0 *  -.10 * turbulence( .5 * normal );
+
+  float b = uWave * cnoise(0.05 * pos + uTime * 0.1);
 
   float displacement = - 10. * b;
 
