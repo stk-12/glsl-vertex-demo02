@@ -6,7 +6,7 @@ uniform float uWave;
 // uniform vec2 uFrequency;
 uniform vec3 uFrequency;
 
-
+varying float vDistortion;
 
 #pragma glslify: cnoise = require(glsl-noise/classic/3d);
 
@@ -31,6 +31,8 @@ void main() {
   float displacement = - 10. * b;
 
   vec3 newPosition = pos + normal * displacement;
+
+  vDistortion = displacement;
 
   // vec4 viewPosition = viewMatrix * modelPosition;
   // vec4 projectionPosition = projectionMatrix * viewPosition;
