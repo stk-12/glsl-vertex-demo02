@@ -2,6 +2,7 @@
 
 varying vec2 vUv;
 uniform float uTime;
+uniform float uSpeed;
 uniform float uWave;
 // uniform vec2 uFrequency;
 uniform vec3 uFrequency;
@@ -13,6 +14,9 @@ varying float vDistortion;
 
 void main() {
   vUv = uv;
+
+  float speed = uTime * uSpeed;
+
   vec3 pos = position;
 
   vec4 modelPosition = modelMatrix * vec4(position, 1.0);
@@ -26,7 +30,7 @@ void main() {
 
   // noise = 10.0 *  -.10 * turbulence( .5 * normal );
 
-  float b = uWave * cnoise(0.05 * pos + uTime * 0.1);
+  float b = uWave * cnoise(0.05 * pos + speed * 0.1);
 
   float displacement = - 10. * b;
 

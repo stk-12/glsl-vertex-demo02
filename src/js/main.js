@@ -32,6 +32,9 @@ class Main {
       uTime: {
         value: 0.0
       },
+      uSpeed: {
+        value: 1.0
+      },
       //振幅
       uWave: {
         value: 20.0
@@ -78,6 +81,7 @@ class Main {
 
   _setGui() {
     this.gui.add(this.uniforms.uWave, "value").min(0).max(50).step(0.1).name('Wave');
+    this.gui.add(this.uniforms.uSpeed, 'value').min(0.001).max(10.0).step(0.001).name('Speed')
     // this.gui.add(this.uniforms.uFrequency.value, "x").min(0).max(30).step(0.1).name('FrequencyX');
     // this.gui.add(this.uniforms.uFrequency.value, "y").min(0).max(30).step(0.1).name('FrequencyY');
     // this.gui.add(this.uniforms.uFrequency.value, "z").min(0).max(30).step(0.1).name('FrequencyZ');
@@ -122,7 +126,7 @@ class Main {
 
   _update() {
 
-    // this.mesh.rotation.y += 0.001;
+    // this.mesh.rotation.y += 0.003;
     this.step += 0.005;
 
     // this.camera.position.x = 1000 * Math.sin(this.step);
