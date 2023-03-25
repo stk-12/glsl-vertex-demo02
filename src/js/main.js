@@ -41,10 +41,16 @@ class Main {
       },
       //周波数
       uFrequency: {
-        // value: 3.0
+        value: 0.05
         // value: new THREE.Vector2(4, 6)
-        value: new THREE.Vector3(4, 4, 4)
-      }
+        // value: new THREE.Vector3(4, 4, 4)
+      },
+      uColor1: {
+        value: new THREE.Color(0xd43f8c)
+      },
+      uColor2: {
+        value: new THREE.Color(0x014fc4)
+      },
     };
 
     this.init();
@@ -80,8 +86,11 @@ class Main {
   }
 
   _setGui() {
-    this.gui.add(this.uniforms.uWave, "value").min(0).max(50).step(0.1).name('Wave');
-    this.gui.add(this.uniforms.uSpeed, 'value').min(0.001).max(10.0).step(0.001).name('Speed')
+    this.gui.add(this.uniforms.uWave, "value").min(0).max(60).step(0.1).name('ノイズの高さ');
+    this.gui.add(this.uniforms.uFrequency, "value").min(0.01).max(0.1).step(0.01).name('ノイズの粒度');
+    this.gui.add(this.uniforms.uSpeed, 'value').min(0.001).max(10.0).step(0.001).name('速度')
+    this.gui.addColor(this.uniforms.uColor1, 'value').name('Color 1').listen()
+    this.gui.addColor(this.uniforms.uColor2, 'value').name('Color 2').listen()
     // this.gui.add(this.uniforms.uFrequency.value, "x").min(0).max(30).step(0.1).name('FrequencyX');
     // this.gui.add(this.uniforms.uFrequency.value, "y").min(0).max(30).step(0.1).name('FrequencyY');
     // this.gui.add(this.uniforms.uFrequency.value, "z").min(0).max(30).step(0.1).name('FrequencyZ');
@@ -95,7 +104,7 @@ class Main {
 
   _addMesh() {
     //ジオメトリ
-    this.geometry = new THREE.IcosahedronGeometry(200, 24);
+    this.geometry = new THREE.IcosahedronGeometry(200, 128);
     // this.geometry = new THREE.PlaneGeometry(200, 200, 64, 64);
 
     //マテリアル

@@ -4,8 +4,7 @@ varying vec2 vUv;
 uniform float uTime;
 uniform float uSpeed;
 uniform float uWave;
-// uniform vec2 uFrequency;
-uniform vec3 uFrequency;
+uniform float uFrequency;
 
 varying float vDistortion;
 
@@ -30,7 +29,7 @@ void main() {
 
   // noise = 10.0 *  -.10 * turbulence( .5 * normal );
 
-  float b = uWave * cnoise(0.05 * pos + speed * 0.1);
+  float b = uWave * cnoise(uFrequency * pos + speed * 0.1);
 
   float displacement = - 10. * b;
 
